@@ -4,56 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magic F1 - Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 0.2em;
+        }
+
+        .produit {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 2em;
+        }
+
+        .produit img {
+            max-width: 900px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .details-produit {
+            max-width: 400px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header, footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 0.2em;
-}
-
-.produit {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 2em;
-}
-
-.produit img {
-    max-width: 900px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.details-produit {
-    max-width: 400px;
-}
-
-button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-</style>
 <body>
 
 <header>
@@ -61,21 +61,44 @@ footer {
 </header>
 
 <section class="produit">
-    <img src="chaussure.png" alt="Magic F1">
+    <img id="imageProduit" src="chaussurerouge.jpg" alt="Magic F1 Rouge">
     <div class="details-produit">
         <h2>Magic F1</h2>
         <p>Prix: $493</p>
+        <label for="couleur">Sélectionnez la couleur:</label>
+        <select id="couleur" onchange="changerCouleur()">
+            <option value="rouge">Rouge</option>
+            <option value="bleue">Bleue</option>
+        </select>
         <button onclick="ajouterAuPanier()">Ajouter au Panier</button>
     </div>
 </section>
+
 <script>
     function ajouterAuPanier() {
-    alert("Produit ajouté au panier. Continuez vers le processus de paiement.");
-    window.location.href = "panier.html";
+        alert("Produit ajouté au panier. Continuez vers le processus de paiement.");
+        var couleurSelectionnee = document.getElementById("couleur").value;
+        if (couleurSelectionnee === "rouge") {
+            window.location.href = "panier.html";
+        } else if (couleurSelectionnee === "bleue") {
+            window.location.href = "panier2.html";
+        }
+    }
+
+    function changerCouleur() {
+        var couleurSelectionnee = document.getElementById("couleur").value;
+        var imageProduit = document.getElementById("imageProduit");
+
+        if (couleurSelectionnee === "rouge") {
+            imageProduit.src = "chaussure.png";
+        } else if (couleurSelectionnee === "bleue") {
+            imageProduit.src = "chaussurebleue.jpg";
+        }
     }
 </script>
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
