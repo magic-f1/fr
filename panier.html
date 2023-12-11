@@ -11,20 +11,13 @@
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 0.2em;
+    padding: 1em;
 }
     .panier {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 0vh; 
-}
-
-
-.IMGpanier img {
-    max-width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
 }
 </style>
     
@@ -33,13 +26,10 @@
 <header>
     <h1>Votre Panier</h1>
 </header>
-<section class="IMGpanier">
-    <div class="details-IMG">
-        <img src="chaussure.png" alt="Magic F1">
-    </div>
 </section>
 <section class="panier">
     <div class="details-produit">
+        <img src="chaussure.png" alt="Magic F1">
         <h2>Magic F1</h2>
         <p>Prix: $493</p>
         <button onclick="ouvrirPopupPaiement()">Paiement</button>
