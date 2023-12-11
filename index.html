@@ -61,7 +61,7 @@
 </header>
 
 <section class="produit">
-    <img id="imageProduit" src="chaussurerouge.jpg" alt="Magic F1 Rouge">
+    <img id="imageProduit" src="chaussure.png" alt="Magic F1 Rouge">
     <div class="details-produit">
         <h2>Magic F1</h2>
         <p>Prix: $493</p>
@@ -75,6 +75,12 @@
 </section>
 
 <script>
+    // Assurez-vous que cette fonction est appelée lors du chargement de la page
+    window.onload = function () {
+        // Définir l'image rouge par défaut lors de l'ouverture du site
+        document.getElementById("imageProduit").src = "chaussure.png";
+    };
+
     function ajouterAuPanier() {
         alert("Produit ajouté au panier. Continuez vers le processus de paiement.");
         var couleurSelectionnee = document.getElementById("couleur").value;
@@ -98,6 +104,7 @@
 </script>
 </body>
 </html>
+
 
 <!DOCTYPE html>
 <html lang="en">
