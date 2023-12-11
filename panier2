@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Panier - Magic F1 Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0.2em;
+}
+    .panier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; 
+}
+
+.panier img {
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+</style>
+    
+<body>
+
+<header>
+    <h1>Votre Panier</h1>
+</header>
+</section>
+<section class="panier">
+    <div class="details-produit">
+        <img src="chaussurebleue.jpg" alt="Magic F1">
+        <h2>Magic F1</h2>
+        <p>Prix: $493</p>
+        <button onclick="ouvrirPopupPaiement()">Paiement</button>
+    </div>
+</section>
+<div id="popupPaiement" class="popup">
+    <label for="codeCB">Code de CB:</label>
+    <input type="text" id="codeCB" placeholder="Entrez votre code de CB">
+
+    <label for="adresse">Adresse:</label>
+    <input type="text" id="adresse" placeholder="Entrez votre adresse">
+
+    <button onclick="terminerAchat()">Terminer</button>
+</div>
+
+<div id="popupMerci" class="popup">
+    <p>Merci pour votre achat!</p>
+</div>
+
+<footer>
+    <p>&copy; 2023 Magic F1.</p>
+</footer>
+
+<script>
+    function ouvrirPopupPaiement() {
+        document.getElementById("popupPaiement").style.display = "block";
+    }
+
+    function terminerAchat() {
+        alert("Merci pour votre achat!");
+        document.getElementById("popupPaiement").style.display = "none";
+        document.getElementById("popupMerci").style.display = "block";
+
+        // Fermer la popupMerci après 5 secondes
+        setTimeout(function() {
+            document.getElementById("popupMerci").style.display = "none";
+        }, 5000);
+    }
+</script>
+</body>
+</html>
