@@ -13,11 +13,12 @@
     text-align: center;
     padding: 0.2em;
 }
-        .panier img {
-    max-width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    align-item: center;
+    .panier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Ajustez la hauteur selon vos besoins */
+}
 }
 </style>
     
@@ -26,9 +27,8 @@
 <header>
     <h1>Votre Panier</h1>
 </header>
-
-<section class="panier">
     <img src="chaussure.png" alt="Magic F1">
+<section class="panier">
     <div class="details-produit">
         <h2>Magic F1</h2>
         <p>Prix: $493</p>
