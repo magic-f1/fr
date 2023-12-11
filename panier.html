@@ -18,6 +18,9 @@
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+    button {
+    align-items: center;
+}
 </style>
     
 <body>
@@ -31,11 +34,7 @@
     <div class="details-produit">
         <h2>Magic F1</h2>
         <p>Prix: $493</p>
-    </div>
-</section>
-<section class="panier">
-    <div class="details-produit">
-    <button onclick="ouvrirPopupPaiement()">Paiement</button>
+        <button onclick="ouvrirPopupPaiement()">Paiement</button>
     </div>
 </section>
 <div id="popupPaiement" class="popup">
